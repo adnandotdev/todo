@@ -5,6 +5,8 @@ const postModel = require('./models/post')
 const cookieParser = require('cookie-parser')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
+const dotenv = require('dotenv')
+dotenv.config()
 
 app.set("view engine", "ejs")
 app.use(express.json())
@@ -104,9 +106,4 @@ app.post('/addnote/:id',isLoggedIn, async (req, res) => {
 
 })
 
-// ---------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-app.listen(3003)
+app.listen(process.env.PORT)

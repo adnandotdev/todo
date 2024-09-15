@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
+const dotenv = require('dotenv')
+dotenv.config()
 
-mongoose.connect(`mongodb://localhost:27017/miniproj`)
+mongoose.connect(process.env.MONGO_URL)
 
 const userSchema = mongoose.Schema({
     name: String,
