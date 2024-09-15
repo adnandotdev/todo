@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <div class="w-full min-h-screen bg-zinc-900 text-white">
+        <div class="p-5 flex justify-between items-center">
+            <h3 class="text-3xl text-cyan-500 mb-5">View & Edit</h3>
+            
+        </div>
+        <div class="mb-10 w-full flex justify-center">
+            <form class="w-2/5" action="/update" method="post">
+                <!-- <h3 class="text-2xl mb-5 ">Add a Note++</h3></span> -->
+                <input type="hidden" name="id" value="<%= post._id %>">
+                <textarea class="px-3 py-2 word-wrap w-full rounded-md outline-none bg-transparent border-2 border-zinc-800 overflow-hidden resize-none" rows="1" oninput="this.style.height = 'auto'; this.style.height = this.scrollHeight + 'px';" type="text" placeholder="Title" name="postTitle"><%= post.postTitle %></textarea>
+                <textarea class="px-3 py-2 word-wrap w-full rounded-md outline-none bg-transparent border-2 border-zinc-800 overflow-hidden resize-none min-h-[300px]" oninput="this.style.height = 'auto'; this.style.height = this.scrollHeight + 'px';" type="text" placeholder="Take a note..." name="postData"><%= post.postData %></textarea>
+                <div class="flex justify-between">
+                    <button class="px-3 py-2 bg-green-500 rounded-md border-2 border-zinc-800"><a href="/profile">Back</a></button>
+                    <input class="px-3 py-2 bg-cyan-500 rounded-md border-2 border-zinc-800 cursor-pointer" type="submit" value="Update++">
+                </div>
+            </form>
+        </div>
+
+    </div>
+    
+</body>
+</html>
