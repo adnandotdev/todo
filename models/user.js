@@ -3,7 +3,7 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 // mongoose.connect(process.env.MONGO_URL)
-mongoose.connect(process.env.MONGO_URL);
+mongoose.connect(process.env.MONGO_URL, { ssl: true });
 
 const userSchema = mongoose.Schema({
     name: String,
