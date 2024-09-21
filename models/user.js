@@ -3,9 +3,7 @@ const dotenv = require('dotenv')
 dotenv.config()
 
 // mongoose.connect(process.env.MONGO_URL)
-mongoose.connect('mongodb+srv://quillnotes:qIY6irXpqB5lpKp1@notes.qrb1p.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB connected'))
-  .catch((err) => console.log(err));
+mongoose.connect('mongodb+srv://quillnotes:qIY6irXpqB5lpKp1@notes.qrb1p.mongodb.net/');
 
 const userSchema = mongoose.Schema({
     name: String,
